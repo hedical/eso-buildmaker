@@ -55,7 +55,7 @@ router.patch("/:id", auth, async (req, res) => {
             .status(400)
             .json({ msg: "No build found with this ID that belongs to the current user." });
 
-    let buildToUpdate = { title, role, race, iclass, food, stats } = req.body
+    let buildToUpdate = { title, role, race, iclass, food, stats, gears } = req.body
 
     const patchedBuild = await Build.findByIdAndUpdate(req.params.id, buildToUpdate, { new: true })
 
