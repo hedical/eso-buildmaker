@@ -69,11 +69,12 @@ const buildSchema = new Schema({
     race: { type: String },
     food: { type: String },
     gears: [gear],
-    skills: [skill],
     stats: stat,
-    c_points: [c_point],
     // coming from calculations
     calculs: [calcul],
+    // options
+    skills: [skill],
+    c_points: [c_point],
     // social media features
     likes: { type: Number },
     comments: { type: String },
