@@ -22,7 +22,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "material-ui-confirm": "^2.1.1",
     "mongoose": "^5.10.0",
+    "notistack": "^1.0.0",
     "react-tooltip": "^4.2.9"
   }
 }
