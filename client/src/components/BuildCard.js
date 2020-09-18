@@ -59,7 +59,7 @@ export default function ImgMediaCard(props) {
     const deleteBuild = (build) => {
         setSelectedBuild(build._id)
         axios.delete(
-            `http://localhost:5000/builds/${build._id}`,
+            `/builds/${build._id}`,
             {
                 headers: {
                     "x-auth-token": localStorage.getItem("auth-token")

@@ -21,7 +21,7 @@ export default function ImgMediaCard() {
 
     const getAllBuilds = async () => {
         await axios
-            .get(`http://localhost:5000/builds/all`,
+            .get(`/builds/all`,
                 {
                     headers: {
                         "x-auth-token": localStorage.getItem("auth-token")

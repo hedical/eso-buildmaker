@@ -19,7 +19,7 @@ const Home = () => {
 
     const getAllBuilds = () => {
         axios.get(
-            `http://localhost:5000/builds/allbuilds`,
+            `/builds/allbuilds`,
             {
                 headers: {
                     "x-auth-token": localStorage.getItem("auth-token")

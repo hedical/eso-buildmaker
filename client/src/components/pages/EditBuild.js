@@ -63,7 +63,7 @@ const EditBuild = () => {
 
 
     const allSets = () => {
-        axios.get('http://localhost:5000/api/sets', {
+        axios.get('/api/sets', {
             headers: {
                 "x-auth-token": localStorage.getItem("auth-token")
             }
@@ -77,7 +77,7 @@ const EditBuild = () => {
         console.log("getBuildInfo");
         console.log(params.id);
         const mybuild = await axios
-            .get(`http://localhost:5000/builds/${params.id}`,
+            .get(`/builds/${params.id}`,
                 {
                     headers: {
                         "x-auth-token": localStorage.getItem("auth-token")
@@ -95,7 +95,7 @@ const EditBuild = () => {
             if (build._id) {
                 const updatedBuild = { userId: userData.user.id, title, iclass, role, race, food, stats, comments }
                 await axios.patch(
-                    `http://localhost:5000/builds/${params.id}`,
+                    `/builds/${params.id}`,
                     updatedBuild, {
                     headers: {
                         "x-auth-token": localStorage.getItem("auth-token")

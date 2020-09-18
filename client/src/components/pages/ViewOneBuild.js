@@ -58,7 +58,7 @@ const ViewOneBuild = () => {
     const getBuildInfo = async () => {
         console.log("getBuildInfo");
         const mybuild = await axios
-            .get(`http://localhost:5000/builds/${params.id}`,
+            .get(`/builds/${params.id}`,
                 {
                     headers: {
                         "x-auth-token": localStorage.getItem("auth-token")

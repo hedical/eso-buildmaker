@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 function getSets() {
 
-    axios.get('http://localhost:5000/api/sets', {
+    axios.get('/api/sets', {
         headers: {
             "x-auth-token": localStorage.getItem("auth-token")
         }

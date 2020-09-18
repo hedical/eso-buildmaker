@@ -68,7 +68,7 @@ const SimpleGears = (props) => {
 
         try {
             await axios
-                .get(`http://localhost:5000/builds/${props.buildId}`,
+                .get(`/builds/${props.buildId}`,
                     {
                         headers: {
                             "x-auth-token": localStorage.getItem("auth-token")
@@ -121,7 +121,7 @@ const SimpleGears = (props) => {
             if (!finalGear.gearId) {
 
                 await axios.patch(
-                    `http://localhost:5000/builds/${build}/new`,
+                    `/builds/${build}/new`,
                     finalGear, {
                     headers: {
                         "x-auth-token": localStorage.getItem("auth-token")
@@ -132,7 +132,7 @@ const SimpleGears = (props) => {
                 })
             } else if (finalGear.gearId) {
                 await axios.patch(
-                    `http://localhost:5000/builds/${build}/${finalGear.gearId}`,
+                    `/builds/${build}/${finalGear.gearId}`,
                     finalGear, {
                     headers: {
                         "x-auth-token": localStorage.getItem("auth-token")
