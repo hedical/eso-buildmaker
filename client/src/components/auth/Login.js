@@ -19,7 +19,7 @@ const Login = () => {
         try {
             const loginUser = { email, password }
 
-            const loginResponse = await axios.post("http://localhost:5000/users/login", loginUser)
+            const loginResponse = await axios.post("/users/login", loginUser)
             setUserData({
                 token: loginResponse.data.token,
                 user: loginResponse.data.user

@@ -7,6 +7,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json()); // to read json objects from the request
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/users", require("./routes/userRouter"))
 app.use("/builds", require("./routes/build-routes"))

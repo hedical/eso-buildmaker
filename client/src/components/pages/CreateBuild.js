@@ -115,7 +115,7 @@ const CreateBuild = () => {
     const classes = useStyles();
 
     const allSets = () => {
-        axios.get('http://localhost:5000/api/sets', {
+        axios.get('/api/sets', {
             headers: {
                 "x-auth-token": localStorage.getItem("auth-token")
             }
@@ -132,7 +132,7 @@ const CreateBuild = () => {
             if (buildId) {
                 const updatedBuild = { userId: userData.user.id, title, iclass, role, race, food, gears, comments }
                 await axios.patch(
-                    `http://localhost:5000/builds/${buildId}`,
+                    `/builds/${buildId}`,
                     updatedBuild, {
                     headers: {
                         "x-auth-token": localStorage.getItem("auth-token")
@@ -145,7 +145,7 @@ const CreateBuild = () => {
             } else {
                 const newBuild = { userId: userData.user.id, title, iclass, role, race, food, gears, skills, c_points, calculs, likes, comments }
                 await axios.post(
-                    "http://localhost:5000/builds",
+                    "/builds",
                     newBuild, {
                     headers: {
                         "x-auth-token": localStorage.getItem("auth-token")

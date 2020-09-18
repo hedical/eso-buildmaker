@@ -21,10 +21,10 @@ const Register = () => {
         try {
             const newUser = { email, password, passwordCheck, username }
             await axios.post(
-                "http://localhost:5000/users/register",
+                "/users/register",
                 newUser);
 
-            const loginResponse = await axios.post("http://localhost:5000/users/login", {
+            const loginResponse = await axios.post("/users/login", {
                 email,
                 password,
             });
