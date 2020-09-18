@@ -10,7 +10,7 @@
     "server": "nodemon server.js",
     "dev": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "cd client/ && npm install && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -31,8 +31,5 @@
     "react-swipeable-views": "^0.13.9",
     "react-tooltip": "^4.2.9",
     "react-transition-group": "^4.4.1"
-  },
-  "engines": {
-    "node": "10.16.0"
   }
 }
