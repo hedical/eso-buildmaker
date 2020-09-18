@@ -25,6 +25,12 @@ router.post("/", auth, async (req, res) => {
 })
 
 // GET ALL BUILD FOR A USER
+router.get("/allbuilds", auth, async (req, res) => {
+    const builds = await Build.find({});
+    res.json(builds)
+})
+
+// GET ALL BUILD FOR A USER
 router.get("/all", auth, async (req, res) => {
     const builds = await Build.find({ userId: req.user });
     res.json(builds)
