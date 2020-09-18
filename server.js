@@ -7,6 +7,10 @@ const app = express();
 app.use(express.json()); // to read json objects from the request
 app.use(cors());
 
+app.use("/users", require("./routes/userRouter"))
+app.use("/builds", require("./routes/build-routes"))
+app.use("/api", require("./routes/api-routes"))
+
 const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV === "production") {
@@ -30,8 +34,5 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
 })
 
 
-app.use("/users", require("./routes/userRouter"))
-app.use("/builds", require("./routes/build-routes"))
-// app.use("/builds/:build_id/gears", require("./routes/gear-routes"))
-app.use("/api", require("./routes/api-routes"))
+
 
