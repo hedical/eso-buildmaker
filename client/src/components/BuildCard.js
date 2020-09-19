@@ -115,7 +115,7 @@ export default function ImgMediaCard(props) {
 
     return (
 
-        <div className="card text-white col-3 m-2">
+        <div className="card text-white col-lg-3 col-md-6 col-sm-12 m-2">
             <img className="card-img" src={props.build.iclass ? require(`../utils/images/${props.build.iclass}Card.jpg`) : "https://images.mmorpg.com/images/heroes/news/43780.jpg"} style={imgStyle} alt="Card image" />
             <div className="card-img-overlay">
                 <div className="row pull-right">

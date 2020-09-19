@@ -196,7 +196,7 @@ const CreateBuild = () => {
 
 
 
-                    <div className="row">
+                    <div className="row col-12-md-auto justify-content-center">
 
                         <img className="classImg col-lg-4 col-md-4 col-sm-2" src={iclass ? require(`../../utils/images/${iclass}.png`) : "https://www.eso-gold.com/images/game_left/the-elder-scrolls-online.png"} style={imgStyle} />
 

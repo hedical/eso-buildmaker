@@ -156,4 +156,13 @@ router.get("/", auth, async (req, res) => {
     });
 })
 
+// route used to get usernames
+router.get("/all", auth, async (req, res) => {
+    const user = await User.find({});
+    res.json({
+        username: user.username,
+        id: user._id
+    });
+})
+
 module.exports = router

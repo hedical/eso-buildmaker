@@ -62,6 +62,8 @@ const calcul = new Schema({
 const buildSchema = new Schema({
     // coming from UserContext
     userId: { type: String, require: true },
+    // `Date.now()` returns the current unix timestamp as a number
+    date: { type: Date, default: Date.now },
     // coming from inputs
     title: { type: String, required: true, minlength: 5, maxlength: 30 },
     role: { type: String },

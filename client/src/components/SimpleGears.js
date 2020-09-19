@@ -174,7 +174,7 @@ const SimpleGears = (props) => {
                 <h1>Gears selection</h1>
             </div>
 
-            <div className="row">
+            <div className="row col-12-md-auto justify-content-center">
                 <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12 m-0 p-0" gears>
                     <div className="row col-12 offset-1 mb-1 p-0 m-0">
                         <div className="card-group offset-4 col-4">

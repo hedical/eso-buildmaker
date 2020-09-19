@@ -338,7 +338,7 @@ const ViewOneBuild = () => {
         < div >
             <Jumbo text={build.title} comment={build.comments} />
 
-            <div className="row">
+            <div className="row col-md-auto justify-content-center">
                 <img className="classImg col-lg-3 col-md-2 col-sm-2" src={build.iclass ? require(`../../utils/images/${build.iclass}.png`) : "https://www.eso-gold.com/images/game_left/the-elder-scrolls-online.png"} style={imgStyle} />
 
 

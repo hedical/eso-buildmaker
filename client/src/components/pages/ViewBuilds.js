@@ -39,10 +39,10 @@ export default function ImgMediaCard() {
     return (
         <div>
             <Jumbo text={`My Builds (${userBuilds.length})`} action="Create a new build" link="/create-build" />
-            <div className="container m-1">
+            <div className="container">
                 <SnackbarProvider maxSnack={3}>
                     <ConfirmProvider>
-                        <div className="row col-12">
+                        <div className="row col-12-md-auto justify-content-center">
                             {
                                 userBuilds.map((build) => (
                                     <BuildCard build={build} key={build._id}></BuildCard>

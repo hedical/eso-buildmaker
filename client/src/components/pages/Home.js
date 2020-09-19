@@ -15,7 +15,7 @@ const Home = () => {
 
     const { userData, setUserData } = useContext(UserContext)
     const [builds, setBuilds] = useState([])
-    const [searchClass, setSearchClass] = useState()
+    // const [users, setUsers] = useState([])
 
     const getAllBuilds = () => {
         axios.get(
@@ -31,6 +31,21 @@ const Home = () => {
 
     }
 
+    //For future implementation, add username on cards
+    // const getUsernames = () => {
+    //     axios
+    //         .get(`/users/all`,
+    //             {
+    //                 headers: {
+    //                     "x-auth-token": localStorage.getItem("auth-token")
+    //                 }
+    //             })
+    //         .then((usersInfo) => {
+    //             setUsers(usersInfo.data)
+    //             console.log(users.data);
+    //         })
+    // }
+
     // Definition of state for Input search
     const [search, setSearch] = useState({
         name: "",
@@ -40,8 +55,8 @@ const Home = () => {
     const buildSearch = (e) => {
         setSearch({ ...search, name: e.target.value });
     };
-
     const matchingBuilds = builds.filter(function (build) {
+        console.log(builds);
         if (search.name.length < 0) {
             return builds
         } else if (build.title.includes(search.name)) {
@@ -52,24 +67,26 @@ const Home = () => {
 
     useEffect(() => {
         getAllBuilds()
+        // getUsernames()
     }, [])
+
 
     return (
         <div>
             {userData.user
                 ? <div>
-                    <Jumbo text={"Last created builds"} />
+                    <Jumbo text={"Last created builds"} comment="Created by the community" />
                     <form>
                         <div className="input-group">
                             <input
                                 onChange={buildSearch}
                                 type="text"
-                                className="form-control ml-2 mr-2"
+                                className="form-control ml-4 mr-4"
                                 placeholder="Search by title" />
                         </div>
                     </form>
                     <SnackbarProvider maxSnack={3}>
-                        <div className="row col-12">
+                        <div className="row col-md-auto justify-content-center">
                             {
                                 matchingBuilds.map((build) => (
                                     <BuildCard noEdit="yes" build={build} key={build._id}></BuildCard>

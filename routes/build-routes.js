@@ -8,7 +8,7 @@ const Build = require("../models/buildModel")
 router.post("/", auth, async (req, res) => {
 
     try {
-        const buildToCreate = { userId, title, role, race, iclass, gears, skills, stats, c_points, calculs, likes, comments } = req.body;
+        const buildToCreate = { userId, date, title, role, race, iclass, gears, skills, stats, c_points, calculs, likes, comments } = req.body;
         if (!title)
             return res
                 .status(400)
@@ -61,7 +61,7 @@ router.patch("/:id", auth, async (req, res) => {
             .status(400)
             .json({ msg: "No build found with this ID that belongs to the current user." });
 
-    let buildToUpdate = { title, role, race, iclass, food, stats, gears } = req.body
+    let buildToUpdate = { title, date, role, race, iclass, food, stats, gears } = req.body
 
     const patchedBuild = await Build.findByIdAndUpdate(req.params.id, buildToUpdate, { new: true })
 
@@ -72,8 +72,6 @@ router.patch("/:id", auth, async (req, res) => {
 // UPDATE A GEAR - GEARS IS INITIALY AN EMPTY ARRAY
 router.patch("/:id/:gearId", auth, async (req, res) => {
     const build = await Build.findOne({ _id: req.params.id })
-
-    // const completeGearList = build.gears
 
     if (req.params.gearId === "new") {
         build.gears.push(req.body)

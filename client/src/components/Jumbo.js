@@ -5,6 +5,7 @@ import CreateBuild from './pages/CreateBuild'
 
 const BannerBgImg1 = require(`../utils/images/jumbo.png`)
 
+
 const Jumbo = (props) => {
     return (
 
@@ -12,7 +13,7 @@ const Jumbo = (props) => {
             <div className="container">
                 <h1 className="display-4 text-light mx-auto" id="banner-text">{props.text}</h1>
                 {props.action ? <div className="row float-right">
-                    <h2 className="text-light text-right mr-3">{props.action}</h2>
+                    <h2 className="text-light text-right mr-3" >{props.action}</h2>
                     <Link to={props.link}>
                         <AddCircleRoundedIcon />
                     </Link>
