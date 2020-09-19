@@ -315,7 +315,8 @@ const ViewOneBuild = () => {
 
 
     const imgStyle = {
-        height: "auto",
+        height: "100%",
+        width: "100%",
     }
 
 

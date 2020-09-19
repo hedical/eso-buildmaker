@@ -182,7 +182,8 @@ const CreateBuild = () => {
     };
 
     const imgStyle = {
-        height: "auto",
+        height: "100%",
+        width: "100%",
     }
 
 

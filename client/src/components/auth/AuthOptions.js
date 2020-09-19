@@ -65,6 +65,7 @@ const AuthOptions = () => {
     const register = () => history.push("/register")
     const login = () => history.push("/login")
     const createBuild = () => history.push("/create-build")
+    const profile = () => history.push("/myprofile")
     const myBuilds = () => history.push("/mybuilds")
     const logout = () => {
         setUserData({
@@ -104,7 +105,7 @@ const AuthOptions = () => {
                                             <Paper>
                                                 <ClickAwayListener onClickAway={handleClose}>
                                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
+                                                        <MenuItem onClick={handleClose, profile}>Profile</MenuItem>
                                                         <MenuItem onClick={handleClose, myBuilds}>My builds</MenuItem>
                                                         <MenuItem onClick={handleClose, createBuild}>Create build</MenuItem>
                                                         <MenuItem onClick={handleClose, logout}>Logout</MenuItem>

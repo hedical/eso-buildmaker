@@ -14,6 +14,7 @@ import CreateBuild from './components/pages/CreateBuild'
 import axios from 'axios'
 import ViewOneBuild from './components/pages/ViewOneBuild';
 import EditBuild from './components/pages/EditBuild';
+import Profile from './components/pages/Profile';
 
 
 
@@ -70,12 +71,12 @@ function App() {
             <Route exact path="/mybuilds">
               <Builds />
             </Route>
-            <Route exact path="/" component={Home}>
+            <Route exact path="/myprofile">
+              <Profile />
             </Route>
-            <Route exact path="/login" component={Login}>
-            </Route>
-            <Route exact path="/register" component={Register}>
-            </Route>
+            <Route exact path="/" component={Home}></Route>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/register" component={Register}></Route>
           </Switch>
         </UserContext.Provider>
       </Router>
